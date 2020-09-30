@@ -1,15 +1,18 @@
 <template>
-  <demo-section>
-    <demo-block :title="t('ellipsis')">
-      <div class="van-ellipsis">{{ t('text1') }}</div>
-      <div class="van-multi-ellipsis--l2">{{ t('text2') }}</div>
+  <demo-section class="demo-style">
+    <demo-block title="文字省略">
+      <div class="van-ellipsis">这是一段最多显示一行的文字，多余的内容会被省略</div>
+      <div class="van-multi-ellipsis--l2">  这是一段最多显示两行的文字，多余的内容会被省略  这是一段最多显示两行的文字，多余的内容会被省略
+        这是一段最多显示两行的文字，多余的内容会被省略
+        这是一段最多显示两行的文字，多余的内容会被省略
+      </div>
     </demo-block>
 
-    <demo-block card :title="t('hairline')">
+    <demo-block card title="1px 边框">
       <div class="van-hairline--top" />
     </demo-block>
 
-    <demo-block card :title="t('animation')">
+    <demo-block card title="动画">
       <van-cell is-link title="Fade" @click="animate('van-fade')" />
       <van-cell is-link title="Slide Up" @click="animate('van-slide-up')" />
       <van-cell is-link title="Slide Down" @click="animate('van-slide-down')" />
@@ -28,7 +31,15 @@
 </template>
 
 <script>
+import DemoBlock from "@/components/DemoBlock";
+import DemoSection from "@/components/DemoSection";
+import { Cell } from 'vant'
 export default {
+  components: {
+    [Cell.name]: Cell,
+    DemoBlock,
+    DemoSection
+  },
   i18n: {
     'zh-CN': {
       hairline: '1px 边框',
@@ -72,7 +83,8 @@ export default {
 </script>
 
 <style lang="less">
-@import '../../style/var';
+@import '../style/base';
+@import '../style/var';
 
 .demo-style {
   .van-ellipsis,
