@@ -28,17 +28,20 @@
       <div v-show="show" class="demo-animate-block" />
     </transition>
   </demo-section>
+  <test></test>
 </template>
 
 <script>
 import DemoBlock from "@/components/DemoBlock";
 import DemoSection from "@/components/DemoSection";
 import { Cell } from 'vant'
+import { Test } from '@/components/jsx'
 export default {
   components: {
     [Cell.name]: Cell,
     DemoBlock,
-    DemoSection
+    DemoSection,
+    Test
   },
   i18n: {
     'zh-CN': {
