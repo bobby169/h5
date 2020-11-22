@@ -7,3 +7,9 @@ createApp(App)
   .use(store)
   .use(router)
   .mount("#app");
+
+// 自定义渲染器
+import CanvasApp from "./CanvasApp";
+import { createCanvasApp } from "./customRender";
+
+createCanvasApp(CanvasApp).mount("#canvas");
